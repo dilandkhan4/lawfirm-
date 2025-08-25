@@ -1,0 +1,14 @@
+-- CreateTable
+CREATE TABLE `Reminder` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `caseId` INTEGER NOT NULL,
+    `message` VARCHAR(191) NOT NULL,
+    `concerned` VARCHAR(191) NOT NULL,
+    `dueDate` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Reminder` ADD CONSTRAINT `Reminder_caseId_fkey` FOREIGN KEY (`caseId`) REFERENCES `Case`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

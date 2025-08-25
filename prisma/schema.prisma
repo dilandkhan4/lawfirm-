@@ -1,0 +1,186 @@
+model AuditLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  action    String
+  fileId    Int?
+  caseId    Int?
+  timestamp DateTime @default(now())
+  details   String?
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      String // 'admin', 'lawyer', 'staff'
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  lawyer Lawyer? @relation
+  blogs  Blog[] // Back-relation for blog posts
+}
+
+model Client {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String?  @unique
+  phone     String?
+  address   String?
+  createdAt DateTime @default(now())
+
+  // Relations
+  cases        Case[]
+  appointments Appointment[] // Back-relation for appointments
+  testimonials Testimonial[] // Back-relation for testimonials
+}
+
+model Lawyer {
+  id        Int     @id @default(autoincrement())
+  userId    Int     @unique
+  bio       String?
+  specialty String?
+
+  // Relations
+  user         User          @relation(fields: [userId], references: [id])
+  cases        Case[]
+  appointments Appointment[] // Back-relation for appointments
+  CaseUpdate   CaseUpdate[]
+}
+
+model Case {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      String // 'open', 'in-progress', 'closed'
+  clientId    Int
+  lawyerId    Int
+  createdAt   DateTime @default(now())
+
+  // Relations
+  client    Client       @relation(fields: [clientId], references: [id])
+  lawyer    Lawyer       @relation(fields: [lawyerId], references: [id])
+  updates   CaseUpdate[]
+  documents Document[]
+  Reminder  Reminder[]
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum Status {
+  PENDING
+  INPROGRESS
+  FINISHED
+}
+
+model CaseUpdate {
+  id         Int      @id @default(autoincrement())
+  caseId     Int
+  message    String
+  dueDate    DateTime @default(now())
+  priority   Priority @default(LOW)
+  status     Status   @default(PENDING)
+  assignedTo Int      @default(1)
+  lawyerName String? // Optional field to store the name of the assigned lawyer
+  createdAt  DateTime @default(now())
+
+  // Relations
+  lawyer Lawyer @relation(fields: [assignedTo], references: [id])
+  case   Case   @relation(fields: [caseId], references: [id])
+}
+
+// reminder model
+
+model Reminder {
+  id        Int      @id @default(autoincrement())
+  caseId    Int
+  message   String
+  concerned String
+  dueDate   DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  // Relations
+  case Case @relation(fields: [caseId], references: [id])
+}
+
+model Appointment {
+  id       Int      @id @default(autoincrement())
+  clientId Int
+  lawyerId Int
+  date     DateTime
+  reason   String?
+  status   String // 'pending', 'approved', 'cancelled'
+
+  // Relations
+  client Client @relation(fields: [clientId], references: [id])
+  lawyer Lawyer @relation(fields: [lawyerId], references: [id])
+}
+
+model Document {
+  id         Int      @id @default(autoincrement())
+  caseId     Int
+  title      String
+  url        String // link to file storage
+  uploadedAt DateTime @default(now())
+
+  // Relations
+  case Case @relation(fields: [caseId], references: [id])
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  createdAt   DateTime @default(now())
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  clientId  Int
+  content   String
+  rating    Int // from 1 to 5
+  createdAt DateTime @default(now())
+
+  // Relations
+  client Client @relation(fields: [clientId], references: [id])
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  authorId  Int
+  createdAt DateTime @default(now())
+
+  // Relations
+  author User @relation(fields: [authorId], references: [id])
+}

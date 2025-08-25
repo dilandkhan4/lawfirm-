@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.svg-icon path {
+    fill: #0C0C15; /* Default black color */
+    transition: fill 0.3s ease;
+}
+
+.svg-icon:hover path {
+    fill: red; /* Change to red on hover */
+}
+
+.heading {
+    color: var(--primary-text, #021C1B);
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 1.6px;
+    text-transform: capitalize;
+}
+
+.description {
+    color: #000;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+
+    text-transform: capitalize;
+}
+
+.section-heading {
+    display: inline-flex;
+    padding: 10px 15px;
+    align-items: flex-start;
+   
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--main-color, #B68C5A);
+    color: white;
+}
+.lato {
+    font-family: Lato;
+}
+.footer1 {
+    display: grid;
+    width: 100%;
+    grid-auto-flow: row;
+    place-items: start;
+    column-gap: 1rem /* 16px */;
+    row-gap: 2.5rem /* 40px */;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+.footer1 > * {
+    display: grid;
+    place-items: start;
+    gap: 0.5rem /* 8px */;
+}
+@media (min-width: 64rem /* 768px */) {
+    .footer1 {
+        grid-auto-flow: column;
+    }
+    .footer-center {
+        grid-auto-flow: row dense;
+    }
+}
+/* Home2 related styles */
+
+.section-heading2 {
+    color: var(--main-color, #B68C5A);
+    font-family: Cormorant;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.section-title2 {
+    color: var(--text-primary2, #0C0C15);
+    font-family: Cormorant;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.section-description2 {
+    color: var(--text-secondary, #5B5353);
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.red-filter {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(7476%) hue-rotate(340deg) brightness(104%) contrast(105%);
+}
+
+/* .ploygon-image {
+    clip-path: polygon(87% 14%, 100% 50%, 86% 87%, 50% 100%, 13% 87%, 0 54%, 12% 15%, 48% 0%)
+} */
+
+.polygon-image {
+    clip-path: polygon(86% 14%, 100% 50%, 86% 86%, 50% 100%, 14% 86%, 0% 50%, 14% 14%, 50% 0%);
+}
