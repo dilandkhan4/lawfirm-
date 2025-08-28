@@ -77,7 +77,7 @@ const Navbar2 = () => {
                 <div className="navbar-end">
                     <Link
                         href="/login"
-                        className="px-4 py-2 border-2 border-[#B68C5A] text-white text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 inline-block"
+                        className="px-4 py-2 border-2 border-[#B68C5A] text-white text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 inline-block mr-2"
                     >
                         Login
                     </Link>
@@ -85,7 +85,7 @@ const Navbar2 = () => {
                 <div className="navbar-end">
                     <Link
                         href="/appointment"
-                        className="px-8 py-4 border-2 border-[#B68C5A] text-[#B68C5A] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 inline-block"
+                        className="px-2 py-2 border-2 border-[#B68C5A] text-[#B68C5A] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 inline-block"
                     >
                         Get Appointment
                     </Link>

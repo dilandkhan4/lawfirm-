@@ -138,7 +138,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <Link
                     href="/login"
-                    className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 inline-block"
+                    className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 inline-block mr-2"
                 >
                     Login
                 </Link>

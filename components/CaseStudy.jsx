@@ -28,7 +28,7 @@ const CaseStudy = () => {
                                     <p className='text-[#0C0C15] text-[16px] flex items-center'>{cs.description}</p>
                                     <div className=" flex items-center">
                                         <button
-                                            className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300"
+                                            className="px-4 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 whitespace-nowrap"
                                             onClick={() => handleViewDetails(cs.title)}
                                         >
                                             View Details
@@ -45,83 +45,75 @@ const CaseStudy = () => {
                     and dedication through our successful case studies. </p>
             </div>
             <div className='mb-7'>
-                <div className='flex flex-col md:flex-row space-x-2 lg:space-x-20'>
-                    <h1 className='text-[#0C0C15] text-2xl font-medium'>Premier Legal Solution: <br />
+                <div className='flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8 lg:space-x-20'>
+                    <div className='md:w-1/3'>
+                   <h1 className='text-[#0C0C15] text-2xl font-medium'>Premier Legal Solution: <br />
                         Your Trusted Advisor In <br /> Law</h1>
+                    </div>
+                    <div className='md:w-1/2'>
                     <p className='text-[#0C0C15] text-[16px] flex items-center'>Explore our case studies to see how we've successfully navigated complex legal challenges. <br />
                         Each case reflects our dedication, expertise, and commitment to achieving the best</p>
-                    <div className=" flex items-center">
-                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
+                    </div>
+                    <div className='md:w-1/6 flex justify-start md:justify-end'>
+                         <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 whitespace-nowrap">
                         view details
                         </button>
                     </div>
-                </div>
+                    </div>
                 <div className=' mr-4 mt-7 border-t-2 border-[#B68C5A]'></div>
             </div>
+            
             <div className='mb-7'>
-                <div className='flex flex-col md:flex-row space-x-2 lg:space-x-20'>
-                    <h1 className='text-[#0C0C15] text-2xl font-medium'>Premier Legal Solution: <br />
-                        Your Trusted Advisor In <br /> Law</h1>
-                    <p className='text-[#0C0C15] text-[16px] flex items-center'>Explore our case studies to see how we've successfully navigated complex legal challenges. <br />
-                        Each case reflects our dedication, expertise, and commitment to achieving the best</p>
-                    <div className=" flex items-center">
-                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
-                        view details
-                        </button>
-                    </div>
-                </div>
-                <div className=' mr-4 mt-7 border-t-2 border-[#B68C5A]'></div>
-            </div>
-            <div>
-                <div className='flex flex-col md:flex-row space-x-2 lg:space-x-20'>
-                    <h1 className='text-[#0C0C15] text-2xl font-medium'>Premier Legal Solution: <br />
-                        Your Trusted Advisor In <br /> Law</h1>
-                    <p className='text-[#0C0C15] text-[16px] flex items-center'>Explore our case studies to see how we've successfully navigated complex legal challenges. <br />
-                        Each case reflects our dedication, expertise, and commitment to achieving the best</p>
-                    <div className=" flex items-center">
-                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
-                        view details
-                        </button>
-                    </div>
-                </div>
-                <div className=' mr-4 mt-7 border-t-2 border-[#B68C5A]'></div>
-            </div>
-            <div className='mb-7'>
-                <div className='flex flex-col md:flex-row space-x-2 lg:space-x-20'>
+                <div className='flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8 lg:space-x-20'>
+                    <div className='md:w-1/3'>
                     <h1 className='text-[#0C0C15] text-2xl font-medium'>Landmark Corporate Merger</h1>
+                    </div>
+                    <div className='md:w-1/2'>
                     <p className='text-[#0C0C15] text-[16px] flex items-center'>Midas successfully advised on a high-profile merger between two leading corporations, ensuring regulatory compliance and a seamless transition for all stakeholders.</p>
-                    <div className=" flex items-center">
-                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
+                    </div>
+                    <div className='md:w-1/6 flex justify-start md:justify-end'>
+                       <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 whitespace-nowrap">
                         view details
                         </button>
                     </div>
-                </div>
+                    </div>
                 <div className=' mr-4 mt-7 border-t-2 border-[#B68C5A]'></div>
             </div>
+           
             <div className='mb-7'>
-                <div className='flex flex-col md:flex-row space-x-2 lg:space-x-20'>
+                <div className='flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8 lg:space-x-20'>
+                    <div className='md:w-1/3'>
                     <h1 className='text-[#0C0C15] text-2xl font-medium'>Intellectual Property Victory</h1>
+                    </div>
+                    <div className='md:w-1/2'>
                     <p className='text-[#0C0C15] text-[16px] flex items-center'>Our team secured a favorable judgment in a complex intellectual property dispute, protecting our client’s innovations and market position.</p>
-                    <div className=" flex items-center">
-                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
+                    </div>
+                    <div className='md:w-1/6 flex justify-start md:justify-end'>
+                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 whitespace-nowrap">
                         view details
                         </button>
                     </div>
-                </div>
+                    </div>
                 <div className=' mr-4 mt-7 border-t-2 border-[#B68C5A]'></div>
             </div>
+           
             <div className='mb-7'>
-                <div className='flex flex-col md:flex-row space-x-2 lg:space-x-20'>
+                <div className='flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8 lg:space-x-20'>
+                    <div className='md:w-1/3'>
                     <h1 className='text-[#0C0C15] text-2xl font-medium'>Family Law Resolution</h1>
+                    </div>
+                    <div className='md:w-1/2'>
                     <p className='text-[#0C0C15] text-[16px] flex items-center'>Midas guided a client through a sensitive family law matter, achieving a fair settlement and protecting the interests of all parties involved.</p>
-                    <div className=" flex items-center">
-                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300">
-                        view details
+                    </div>
+                    <div className='md:w-1/6 flex justify-start md:justify-end'>
+                        <button className="px-8 py-4 border-2 border-[#B68C5A] text-[#1D1C22] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 whitespace-nowrap"> View Details
                         </button>
                     </div>
-                </div>
+                    </div>
                 <div className=' mr-4 mt-7 border-t-2 border-[#B68C5A]'></div>
             </div>
+
+            
         </div>
     );
 };

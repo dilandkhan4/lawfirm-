@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 
 const Hero2 = () => {
     return (
@@ -22,10 +23,14 @@ const Hero2 = () => {
                             Committed to defending your rights and delivering justice with integrity,<br /> we work tirelessly to ensure your voice is heard
                         </p>
                         <div className='flex space-x-8'>
-                            <button className="px-8 py-4 border-2 border-[#B68C5A] text-xl rounded-[4px] bg-[#B68C5A] text-white transition-colors duration-300">
-                                Get Appointment
-                            </button>
-                            <button className="px-8 py-4 flex border-2 border-[#B68C5A] text-[#fff] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 group">
+                            
+                            <Link
+                        href="/appointment"
+                        className="px-8 py-4 border-2 border-[#B68C5A] text-xl rounded-[4px] bg-[#B68C5A] text-white transition-colors duration-300"
+                    >
+                        Get Appointment
+                    </Link>
+                            <button className="px-8 py-4 flex border-2 border-[#B68C5A] text-[#000000] text-xl rounded-[4px] hover:bg-[#B68C5A] hover:text-white transition-colors duration-300 group">
                                 Learn more
                                 <Image
                                     src='/Frame.svg'
